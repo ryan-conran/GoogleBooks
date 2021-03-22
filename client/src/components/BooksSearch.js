@@ -39,7 +39,7 @@ function BooksSearch(props) {
                 {books.map((book) => (
                   <div key={book.id}>
                     <div>
-                      <img src={book.volumeInfo.imageLinks.thumbnail} />
+                      <img src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail: ""} />
                     </div>
                     <div>
                       <label>Title:</label>
@@ -60,6 +60,7 @@ function BooksSearch(props) {
                       <span>
                         <a href={book.volumeInfo.infoLink}>Link</a>
                       </span>
+                    
                     </div>
                   </div>
                 ))}
